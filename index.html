@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="uk">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#170f0b" name="theme-color"/>
+  <title>
+   Сіль &amp; Цукор — Пекарня
+  </title>
+  <meta content="Сіль &amp; Цукор — пекарня у Вінниці. Меню, замовлення та бонуси." name="description"/>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="header">
+   <div class="wrap nav container">
+    <a class="brand" href="#home">
+     <img alt="Сіль &amp; Цукор — логотип" src="assets/logo.png"/>
+     <span>
+      СІЛЬ
+      <b>
+       &amp;
+      </b>
+      ЦУКОР
+      <small>
+       Пекарня
+      </small>
+     </span>
+    </a>
+    <button aria-expanded="false" aria-label="Відкрити меню" class="burger" id="burger">
+     ☰
+    </button>
+    <nav id="nav">
+     <a href="#home">
+      Головна
+     </a>
+     <a href="#menu">
+      Меню
+     </a>
+     <a href="#about">
+      Про нас
+     </a>
+     <a href="#location">
+      Контакти
+     </a>
+    </nav>
+    <div class="nav-actions d-flex gap-2">
+     <button class="nav-button" id="profileOpen" type="button">
+      👤
+      <span>
+       Профіль
+      </span>
+     </button>
+     <button class="nav-button" hidden="" id="adminOpen" type="button">
+      ⚙️ Адмін
+     </button>
+     <button class="nav-button orange" id="cartOpen" type="button">
+      🛍
+      <span>
+       Замовити
+      </span>
+      <strong id="cartCount">
+       0
+      </strong>
+     </button>
+    </div>
+   </div>
+  </header>
+  <main>
+   <section class="hero" id="home">
+    <div class="wrap hero-grid container">
+     <div>
+      <div class="eyebrow">
+       ТЕПЛО В КОЖНОМУ ШМАТОЧКУ
+      </div>
+      <h1>
+       СІЛЬ
+       <em>
+        &amp;
+       </em>
+       ЦУКОР
+       <br/>
+       <span class="script-heading">
+        Пекарня
+       </span>
+      </h1>
+      <p>
+       Свіжа випічка, ароматний хліб та улюблені перекуси — усе для смачного дня.
+      </p>
+      <div class="actions">
+       <a class="btn" href="#menu">
+        Переглянути меню ↗
+       </a>
+       <button class="btn ghost" id="heroOrder" type="button">
+        Зробити замовлення
+       </button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="menu">
+    <div class="wrap container">
+     <div class="section-top d-flex flex-wrap justify-content-between">
+      <div>
+       <span class="eyebrow">
+        СМАКУЄ ЩОДНЯ
+       </span>
+       <h2>
+        Наше
+        <em>
+         меню
+        </em>
+       </h2>
+      </div>
+      <p>
+       Оберіть страву та додайте її до кошика.
+      </p>
+     </div>
+     <div class="filters d-flex flex-wrap gap-2">
+      <button class="filter active btn rounded-pill" data-filter="all">
+       Усе меню
+      </button>
+      <button class="filter btn rounded-pill" data-filter="savory">
+       Ситне
+      </button>
+      <button class="filter btn rounded-pill" data-filter="bread">
+       Хліб
+      </button>
+      <button class="filter btn rounded-pill" data-filter="sweet">
+       Солодке
+      </button>
+     </div>
+     <div class="cards row g-3" id="cards">
+      <article class="item col-12 col-sm-6 col-lg-4 card h-100" data-category="savory">
+       <img alt="Шаурма" class="food-photo card-img-top" loading="lazy" src="assets/menu/shaurma.png"/>
+       <div class="item-body card-body">
+        <span class="tag">
+         Ситне
+        </span>
+        <h3>
+         Шаурма
+        </h3>
+        <p>
+         Соковита курка, овочі та соус у лаваші.
+        </p>
+        <div class="item-bottom d-flex flex-wrap align-items-center justify-content-between">
+         <span class="price">
+          130 грн
+         </span>
+         <button class="small-btn add btn btn-sm" data-id="0" type="button">
+          До кошика
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="item col-12 col-sm-6 col-lg-4 card h-100" data-category="savory">
+       <img alt="Хот-дог" class="food-photo card-img-top" loading="lazy" src="assets/menu/hot-dog.png"/>
+       <div class="item-body card-body">
+        <span class="tag">
+         Ситне
+        </span>
+        <h3>
+         Хот-дог
+        </h3>
+        <p>
+         Сосиска в м’якій булочці з соусами.
+        </p>
+        <div class="item-bottom d-flex flex-wrap align-items-center justify-content-between">
+         <span class="price">
+          100 грн
+         </span>
+         <button class="small-btn add btn btn-sm" data-id="1" type="button">
+          До кошика
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="item col-12 col-sm-6 col-lg-4 card h-100" data-category="savory">
+       <img alt="Чіабата" class="food-photo card-img-top" loading="lazy" src="assets/menu/chabata.png"/>
+       <div class="item-body card-body">
+        <span class="tag">
+         Ситне
+        </span>
+        <h3>
+         Чіабата
+        </h3>
+        <p>
+         Хрустка чіабата з апетитною начинкою.
+        </p>
+        <div class="item-bottom d-flex flex-wrap align-items-center justify-content-between">
+         <span class="price">
+          100 грн
+         </span>
+         <button class="small-btn add btn btn-sm" data-id="2" type="button">
+          До кошика
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="item col-12 col-sm-6 col-lg-4 card h-100" data-category="savory">
+       <img alt="Бургер" class="food-photo card-img-top" loading="lazy" src="assets/menu/burger.png"/>
+       <div class="item-body card-body">
+        <span class="tag">
+         Ситне
+        </span>
+        <h3>
+         Бургер
+        </h3>
+        <p>
+         Булочка, котлета, сир та овочі.
+        </p>
+        <div class="item-bottom d-flex flex-wrap align-items-center justify-content-between">
+         <span class="price">
+          100 грн
+         </span>
+         <button class="small-btn add btn btn-sm" data-id="3" type="button">
+          До кошика
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="item col-12 col-sm-6 col-lg-4 card h-100" data-category="bread">
+       <img alt="Хліб" class="food-photo card-img-top" loading="lazy" src="assets/menu/hlib.png"/>
+       <div class="item-body card-body">
+        <span class="tag">
+         Хліб
+        </span>
+        <h3>
+         Хліб
+        </h3>
+        <p>
+         Свіжий хліб із рум’яною скоринкою.
+        </p>
+        <div class="item-bottom d-flex flex-wrap align-items-center justify-content-between">
+         <span class="price">
+          Ціну уточнюйте
+         </span>
+         <button class="small-btn btn btn-sm" disabled="" title="Ціну ще не встановлено" type="button">
+          До кошика
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="item col-12 col-sm-6 col-lg-4 card h-100" data-category="sweet">
+       <img alt="Солодка випічка" class="food-photo card-img-top" loading="lazy" src="assets/menu/vipichka.png"/>
+       <div class="item-body card-body">
+        <span class="tag">
+         Солодке
+        </span>
+        <h3>
+         Солодка випічка
+        </h3>
+        <p>
+         Оберіть улюблену випічку зі списку.
+        </p>
+        <label class="select-label" for="pastry">
+         Вид випічки
+        </label>
+        <select class="pastry-select form-select" id="pastry">
+         <option value="">
+          Оберіть випічку
+         </option>
+         <option>
+          Булочка з корицею
+         </option>
+         <option>
+          Круасан
+         </option>
+         <option>
+          Булочка з маком
+         </option>
+         <option>
+          Булочка з родзинками
+         </option>
+         <option>
+          Булочка з вишнею
+         </option>
+        </select>
+        <div class="item-bottom d-flex flex-wrap align-items-center justify-content-between">
+         <span class="price">
+          Ціну уточнюйте
+         </span>
+         <button class="small-btn btn btn-sm" id="pastryAdd" type="button">
+          До кошика
+         </button>
+        </div>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section about" id="about">
+    <div class="wrap about-grid container">
+     <div class="about-icon">
+      <img alt="Асортимент солодкої випічки" loading="lazy" src="assets/menu/vipichka.png"/>
+     </div>
+     <div>
+      <span class="eyebrow">
+       ПРО ПЕКАРНЮ
+      </span>
+      <h2>
+       Місце, де пахне
+       <em>
+        випічкою
+       </em>
+      </h2>
+      <p>
+       «Сіль &amp; Цукор» — пекарня для тих, хто любить хрусткий хліб, солодкі булочки та ситні перекуси.
+      </p>
+      <div class="perks d-flex flex-wrap gap-2">
+       <span class="badge rounded-pill">
+        🥖 Хліб та випічка
+       </span>
+       <span class="badge rounded-pill">
+        🌯 Ситні страви
+       </span>
+       <span class="badge rounded-pill">
+        🧡 Смачні моменти
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section location" id="location">
+    <div class="wrap location-grid container">
+     <div>
+      <span class="eyebrow">
+       ЗАВІТАЙТЕ ДО НАС
+      </span>
+      <h2>
+       Де нас
+       <em>
+        знайти?
+       </em>
+      </h2>
+      <p>
+       📍 м. Вінниця, район проїзду Дубовецького
+      </p>
+      <p>
+       Точну адресу входу уточнюйте безпосередньо у пекарні.
+      </p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%D0%BF%D1%80%D0%BE%D1%97%D0%B7%D0%B4+%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9+%D0%92%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8F" rel="noopener noreferrer" target="_blank">
+       Відкрити Google Maps ↗
+      </a>
+     </div>
+     <div class="map">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%D0%BF%D1%80%D0%BE%D1%97%D0%B7%D0%B4%20%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9%20%D0%92%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8F&amp;z=16&amp;output=embed" title="Карта проїзду Дубовецького у Вінниці">
+      </iframe>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="wrap foot container">
+    <div class="brand">
+     <img alt="Логотип пекарні" src="assets/logo.png"/>
+     <span>
+      СІЛЬ
+      <b>
+       &amp;
+      </b>
+      ЦУКОР
+      <small>
+       Пекарня
+      </small>
+     </span>
+    </div>
+    <p>
+     Смачно поруч із вами 🧡
+    </p>
+    <p>
+     ©
+     <span id="year">
+     </span>
+     Сіль &amp; Цукор
+    </p>
+   </div>
+  </footer>
+  <dialog class="dialog" id="cartDialog">
+   <div class="dialog-head">
+    <h2>
+     🛍 Ваш кошик
+    </h2>
+    <button aria-label="Закрити" class="close" data-close="cartDialog">
+     ✕
+    </button>
+   </div>
+   <div id="cartItems">
+   </div>
+   <div class="totals">
+    <p>
+     Сума:
+     <strong id="subtotal">
+      0 грн
+     </strong>
+    </p>
+    <p>
+     Знижка балами:
+     <strong id="discount">
+      0 грн
+     </strong>
+    </p>
+    <p class="total">
+     Разом:
+     <strong id="total">
+      0 грн
+     </strong>
+    </p>
+   </div>
+   <label class="checkline">
+    <input id="usePoints" type="checkbox"/>
+    Використати бонуси (стане доступно після інтеграції оплати)
+   </label>
+   <button class="btn full" id="checkout" type="button">
+    Створити замовлення (оплата ще не підключена)
+   </button>
+   <p class="fine">
+    Замовлення зберігається у базі даних. Онлайн-оплата LiqPay ще не підключена. Бали не нараховуються до підтвердження оплати.
+   </p>
+  </dialog>
+  <dialog class="dialog" id="profileDialog">
+   <div class="dialog-head">
+    <h2>
+     👤 Особистий кабінет
+    </h2>
+    <button class="close" data-close="profileDialog">
+     ✕
+    </button>
+   </div>
+   <div id="authForms">
+    <p>
+     Увійдіть або створіть акаунт, щоб переглядати свої замовлення.
+    </p>
+    <label class="select-label">
+     Ім'я (для реєстрації)
+    </label>
+    <input autocomplete="name" class="form-control" id="authName" maxlength="60" placeholder="Ваше ім'я"/>
+    <label class="select-label">
+     Email
+    </label>
+    <input autocomplete="email" class="form-control" id="authEmail" placeholder="name@example.com" type="email"/>
+    <label class="select-label">
+     Пароль (мінімум 8 символів)
+    </label>
+    <input autocomplete="current-password" class="form-control" id="authPassword" minlength="8" type="password"/>
+    <div class="auth-buttons">
+     <button class="btn" id="signIn" type="button">
+      Увійти
+     </button>
+     <button class="btn ghost" id="signUp" type="button">
+      Реєстрація
+     </button>
+    </div>
+    <p class="fine">
+     Після реєстрації може знадобитися підтвердити email.
+    </p>
+   </div>
+   <div hidden="" id="accountInfo">
+    <p>
+     Вітаємо,
+     <strong id="accountName">
+     </strong>
+     !
+    </p>
+    <div class="points">
+     <strong id="accountPoints">
+      0
+     </strong>
+     <span>
+      бонусних балів
+     </span>
+    </div>
+    <p class="fine">
+     Бали нараховуються після підтвердженої оплати. Правила використання знижок будуть активовані після завершення платіжної інтеграції.
+    </p>
+    <h3>
+     Мої замовлення
+    </h3>
+    <div id="accountOrders">
+    </div>
+    <button class="small-btn btn btn-sm" id="signOut" type="button">
+     Вийти
+    </button>
+   </div>
+  </dialog>
+  <dialog class="dialog admin-dialog" id="adminDialog">
+   <div class="dialog-head">
+    <h2>
+     ⚙️ Адмінпанель
+    </h2>
+    <button class="close" data-close="adminDialog">
+     ✕
+    </button>
+   </div>
+   <p class="fine">
+    Доступ лише для призначених адміністраторів. Позначення оплати дозволене лише після перевірки фактичного платежу.
+   </p>
+   <button class="small-btn btn btn-sm" id="refreshAdmin" type="button">
+    Оновити замовлення
+   </button>
+   <div id="adminOrders">
+   </div>
+  </dialog>
+  <div aria-live="polite" id="toast" role="status">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js">
+  </script>
+  <script src="config.js">
+  </script>
+  <script src="app.js">
+  </script>
+ </body>
+</html>
